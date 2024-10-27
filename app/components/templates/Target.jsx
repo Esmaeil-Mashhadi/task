@@ -17,6 +17,7 @@ const Target =  () => {
     <div className={styles.container}>
       <label>target  : 180 </label>
       <label>current :{totalHours}</label>
+      <p>test</p>
     </div>
   )
 }
