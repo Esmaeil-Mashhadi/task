@@ -2,6 +2,7 @@ import connectDB from '../../config/connectdb';
 import { NextResponse } from "next/server";
 import taskModel from '../../model/Task'
 
+export const dynamic = 'force-dynamic';
 export  async function GET(){
     await connectDB()
     const [task] = await taskModel.aggregate([
