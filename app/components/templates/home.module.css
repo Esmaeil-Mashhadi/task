@@ -1,0 +1,85 @@
+.container{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50% , -50%);
+    border: solid gray;
+    border-radius: 25px;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    color: gray;
+    box-shadow: 0px 10px 10px rgba(128, 128, 128, 0.319) , 0px -10px 10px rgba(128, 128, 128, 0.489);
+    background: #00031a;
+}
+
+
+.morning ,
+.noon ,
+.night{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+}
+
+.morning label ,
+.noon label ,
+.night label{
+    min-width: 50px;
+    max-width:50px;
+}
+
+.morning input,
+.night input,
+.noon input {
+    width: 50%;
+    cursor: pointer;
+
+}
+
+.total{
+    color: rgba(255, 255, 0, 0.544);
+    font-size: 1.5rem;
+}
+
+.submit{
+    padding: 5px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    background: transparent;
+    color: whitesmoke;
+    border: none;
+    padding: 5px 20px;
+    box-shadow: 0px 0px 10px gray;
+    color: rgb(125, 207, 125);
+}
+.save{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.save button{
+    transition: .2s ease;
+    cursor: pointer;
+}
+.save button:hover{
+    scale: 1.1;
+    box-shadow: 0px 0px 10px green;
+
+}
+
+.saveResult{
+    position: absolute;
+    top:0px;
+    left: 20px;
+    height: 200px;
+    width: 200px;
+    color: gray;
+}
