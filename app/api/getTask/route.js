@@ -11,6 +11,7 @@ export  async function GET(){
       }}
     ])
     const { totalHours } = JSON.parse(JSON.stringify(task || { totalHours: 0 }));
-  
-  return NextResponse.json({totalHours})
-}
+   const response = NextResponse.json({totalHours})
+   response.headers.set('Cache-Control', 'no-store, max-age=0');
+   return response
+  }
