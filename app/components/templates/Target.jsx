@@ -7,7 +7,7 @@ const Target =  () => {
   
   useEffect(()=>{
     const getHours = async()=>{
-      const res = await fetch("/api/getTask" , {cache:'no-store'})
+      const res = await fetch("/api/getTask" , {next:{revalidate:1}})
       const result = await res.json()
       setTotalHours(result?.totalHours || 0)
     }
@@ -17,7 +17,6 @@ const Target =  () => {
     <div className={styles.container}>
       <label>target  : 180 </label>
       <label>current :{totalHours}</label>
-      <p>test</p>
     </div>
   )
 }
