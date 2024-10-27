@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import styles from './home.module.css'
+import { useRouter } from 'next/navigation'
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
         const {value , name} = e.target 
         setTime({...time , [name]:value})
     }
+    const router = useRouter()
 
     const submitHandler = async()=>{
         const res = await fetch('/api/task' , {
@@ -26,6 +28,7 @@ const Home = () => {
         const result = await res.json()
         console.log(result);
         setSaveResult(result.message || 'failed to save')
+        router.refresh()
     }
 
   return (
