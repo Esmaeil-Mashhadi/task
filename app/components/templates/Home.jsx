@@ -29,6 +29,7 @@ const Home = () => {
         console.log(result);
         setSaveResult(result.message || 'failed to save')
         router.refresh()
+        window.location.reload()
     }
 
   return (

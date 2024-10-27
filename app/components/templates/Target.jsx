@@ -1,16 +1,18 @@
-import connectDB from "../../config/connectdb"
-import taskmodel from "../../model/Task"
+'use client'
+import { useEffect, useState } from 'react'
 import styles from './target.module.css'
-const Target = async () => {
-  await connectDB()
-  const [task] = await taskmodel.aggregate([
-    {$group:{
-      _id: null , 
-      totalHours: {$sum:'$totalHours'}
-    }}
-  ])
-  const { totalHours } = JSON.parse(JSON.stringify(task || { totalHours: 0 }));
-
+const Target =  () => {
+  
+  const [totalHours , setTotalHours] = useState()
+  
+  useEffect(()=>{
+    const getHours = async()=>{
+      const res = await fetch("/api/getTask" , {cache:'no-store'})
+      const result = await res.json()
+      setTotalHours(result?.totalHours || 0)
+    }
+    getHours()
+  },[])
   return (
     <div className={styles.container}>
       <label>target  : 180 </label>
