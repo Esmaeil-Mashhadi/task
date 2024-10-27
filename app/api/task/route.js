@@ -4,7 +4,7 @@ import taskModel from '../../model/Task'
 
 export async function POST(req) {
     await connectDB();
-    const body = await req.json();  // Await to correctly parse the JSON body
+    const body = await req.json();  
     const craeteModel =taskModel.create({totalHours : body})
     if(craeteModel){
         return NextResponse.json({ message: "saved successfully" });

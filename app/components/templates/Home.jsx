@@ -23,7 +23,7 @@ const Home = () => {
 
     const submitHandler = async()=>{
         const res = await fetch('/api/task' , {
-            method:'POST' , body:JSON.stringify(sum)
+            method:'POST' , body:JSON.stringify(sum) , cache:'no-store'
         })
         const result = await res.json()
         console.log(result);
